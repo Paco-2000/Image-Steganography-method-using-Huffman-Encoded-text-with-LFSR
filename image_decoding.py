@@ -6,9 +6,9 @@ from PIL import Image
 def read_rgb(rgb):
     return str(rgb % 2)
 
-def decode(public_key, img):
+def decode(private_key, img):
     # Create a new key and flip dic keys/values for easier access
-    k = Key(public_key[0], public_key[1], public_key[2], public_key[3])
+    k = Key(private_key[0], private_key[1], private_key[2], private_key[3])
     k.values = {values: key for key, values in k.values.items()}
 
     im = Image.open(img)
